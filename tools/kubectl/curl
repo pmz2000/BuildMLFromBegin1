@@ -1,0 +1,46 @@
+`curl` 是一个用于在命令行下传输数据的工具，支持多种协议，如 HTTP、HTTPS、FTP 等。以下是一些常用的 `curl` 命令用法：
+
+1. 发送 GET 请求：
+   ```bash
+   curl https://example.com
+   ```
+
+2. 发送 POST 请求：
+   ```bash
+   curl -X POST https://example.com/api -d "param1=value1&param2=value2"
+   ```
+
+3. 下载文件：
+   ```bash
+   curl -O https://example.com/file.txt
+   ```
+
+4. 保存下载文件为指定文件名：
+   ```bash
+   curl -o filename.txt https://example.com/file.txt
+   ```
+
+5. 发送带有请求头的请求：
+   ```bash
+   curl -H "Content-Type: application/json" https://example.com/api
+   ```
+
+6. 显示请求和响应的头信息：
+   ```bash
+   curl -i https://example.com
+   ```
+
+7. 显示详细的传输信息：
+   ```bash
+   curl -v https://example.com
+   ```
+
+8. 使用代理服务器发送请求：
+   ```bash
+   curl -x http://proxy.example.com:8080 https://example.com
+   ```
+
+9. 忽略 SSL 证书验证：
+   ```bash
+   curl -k https://example.com
+   ```
