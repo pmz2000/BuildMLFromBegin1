@@ -1,1 +1,12 @@
-
+1. `docker pull <image_name>`：从 Docker Hub 下载一个镜像到本地。
+2. `docker images`：列出本地所有的镜像。
+3. `docker ps`：列出当前正在运行的容器。
+4. `docker ps -a`：列出所有的容器，包括停止的容器。
+5. `docker run <image_name>`：在新容器中运行一个镜像。
+6. `docker start <container_id>`：启动一个停止的容器。
+7. `docker stop <container_id>`：停止一个正在运行的容器。
+8. `docker rm <container_id>`：删除一个容器。
+9. `docker rmi <image_name>`：删除一个镜像。
+10. `docker exec -it <container_id> <command>`：在运行的容器中执行一个命令。
+11. `docker build -t <image_name> .`：基于 Dockerfile 构建一个新的镜像。
+12. `docker-compose up`：使用 Docker Compose 启动多个容器。
