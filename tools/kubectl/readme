@@ -14,3 +14,18 @@
 3. 验证安装是否成功：
    ```bash
    kubectl version --client
+
+以下是一些常用的 kubectl 命令，用于与 Kubernetes 集群进行交互和管理：
+
+1. `kubectl get pods`：列出当前命名空间中所有的 Pod。
+2. `kubectl get deployments`：列出当前命名空间中所有的 Deployment。
+3. `kubectl get services`：列出当前命名空间中所有的 Service。
+4. `kubectl get nodes`：列出集群中所有的节点。
+5. `kubectl describe pod <pod_name>`：查看特定 Pod 的详细信息。
+6. `kubectl describe deployment <deployment_name>`：查看特定 Deployment 的详细信息。
+7. `kubectl logs <pod_name>`：查看 Pod 的日志。
+8. `kubectl exec -it <pod_name> -- /bin/bash`：在 Pod 中执行一个 shell 命令。
+9. `kubectl apply -f <yaml_file>`：应用一个 YAML 文件来创建、更新资源。
+10. `kubectl delete <resource_type> <resource_name>`：删除指定的资源。
+11. `kubectl scale deployment <deployment_name> --replicas=<replica_count>`：扩展或缩减 Deployment 中的副本数量。
+12. `kubectl port-forward <pod_name> <local_port>:<remote_port>`：将 Pod 的端口转发到本地端口。
