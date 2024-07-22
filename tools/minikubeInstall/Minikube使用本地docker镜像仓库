@@ -1,0 +1,45 @@
+要配置Minikube使用本地Docker镜像仓库，您可以按照以下步骤操作：
+
+1. 启动Minikube集群：
+```
+minikube start
+```
+
+2. 在Minikube节点上设置Docker环境变量以指向本地Docker守护程序：
+```
+eval $(minikube docker-env)
+```
+
+3. 构建您的Docker镜像并将其加载到Minikube节点上的本地Docker守护程序中：
+```
+docker build -t my-image:latest .
+```
+
+4. 将本地Docker镜像标记为Minikube节点上的本地仓库：
+```
+docker tag my-image:latest $(minikube ip):5000/my-image:latest
+```
+
+5. 将标记的镜像推送到Minikube节点上的本地仓库：
+```
+docker push $(minikube ip):5000/my-image:latest
+```
+
+6. 创建一个Pod或Deployment，并在其配置文件中指定使用本地Docker镜像仓库的镜像路径，例如：
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: $(minikube ip):5000/my-image:latest
+```
+
+7. 应用配置文件以在Minikube集群中创建Pod或Deployment：
+```
+kubectl apply -f your-config-file.yaml
+```
+
+通过以上步骤，您就可以在Minikube集群中使用本地Docker镜像仓库中的镜像了。
