@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joke-replicaset
+  labels:
+      app: fast-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fast-api
+  template:
+    metadata:
+      name: pp1
+      labels:
+          app: fast-api
+    spec:
+      containers:
+      - name: joker-app
+        image: jokes1:latest
+        ports:
+        - containerPort: 8083
